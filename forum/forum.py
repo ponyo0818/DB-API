@@ -3,7 +3,7 @@
 # A buggy web service in need of a database.
 
 # open source web frameworks for Python
-
+import bleach
 from flask import Flask, request, redirect, url_for
 
 from forumdb import get_posts, add_post
@@ -47,7 +47,7 @@ POST = '''\
 @app.route('/', methods=['GET'])
 def main():
   '''Main page of the forum.'''
-  posts = "".join(POST % (date, text) for text, date in get_posts())
+  posts = "".join(POST % (date, bleach.clean(text)) for text, date in get_posts())
   html = HTML_WRAP % posts
   return html
 
