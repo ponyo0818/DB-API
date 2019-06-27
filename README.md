@@ -47,4 +47,3 @@ Scalar Subqueries
 Subquery Expressions
 The FROM clause
 
-Mooseball is not a real sport (yet), but you can get a roughly ball-shaped moose from Squishables.
