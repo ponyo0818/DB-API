@@ -1,4 +1,7 @@
 # DB-API
+This is the project from Intro to Relational Databases
+on Udacity
+(vagrant, psql)
 https://classroom.udacity.com/courses/ud197
 
 Intro to Relational Databases
