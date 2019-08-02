@@ -27,3 +27,40 @@ UPPER('string')
 uppercase and rest of the letters in lowercase.
 Syntax:*/
 INITCAP('string')
+/*Foreign key and Primary key*/
+CREATE TABLE Orders (
+    OrderID int NOT NULL,
+    OrderNumber int NOT NULL,
+    PersonID int,
+    PRIMARY KEY (OrderID),
+    FOREIGN KEY (PersonID) REFERENCES Persons(PersonID)
+);
+
+/*CHECK, NOT NULL*/
+CREATE TABLE Persons (
+    ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int,
+    CHECK (Age>=18)
+);
+
+/*get date*/
+SELECT GetDate()
+
+/*Inner join- selects records that have matching values in both tables.*/
+SELECT Orders.OrderID, Customers.CustomerName
+FROM Orders
+INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID;
+
+/*left join-  returns all records from the left table (table1), and the matched records from the right table */
+SELECT column_name(s)
+FROM table1
+LEFT JOIN table2
+ON table1.column_name = table2.column_name;
+
+/*Outer join- returns all matching records from both tables whether the other table matches or not*/
+SELECT Customers.CustomerName, Orders.OrderID
+FROM Customers
+FULL OUTER JOIN Orders ON Customers.CustomerID=Orders.CustomerID
+ORDER BY Customers.CustomerName;
