@@ -50,3 +50,6 @@ Scalar Subqueries
 Subquery Expressions
 The FROM clause
 
+# Question.sql
+SQL questions for interview
+
