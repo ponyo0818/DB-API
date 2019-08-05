@@ -64,3 +64,39 @@ SELECT Customers.CustomerName, Orders.OrderID
 FROM Customers
 FULL OUTER JOIN Orders ON Customers.CustomerID=Orders.CustomerID
 ORDER BY Customers.CustomerName;
+
+/*Get the count of records in a table*/
+SELECT COUNT(*) FROM table /*Count all of the rows in a table*/
+/*In MySQL*/
+SHOW TABLE STATUS;
+
+/* find the names of employees that begin with ‘A’*/
+SELECT * FROM Table_name WHERE EmpName like 'A%'
+
+/*get the third highest salary of an employee from employee_table*/
+SELECT TOP 1 salary
+FROM(
+SELECT TOP 3 salary
+FROM employee_table
+ORDER BY salary DESC) AS emp
+ORDER BY salary ASC;
+
+/*insert null values*/
+INSERT INTO atable (x,y,z) VALUES ( NULL,NULL,NULL)
+
+/* IN operator allows you to specify multiple values in a WHERE clause*/
+SELECT column_name(s)
+FROM table_name
+WHERE column_name IN (value1, value2, ...);
+
+SELECT * FROM Customers
+WHERE Country IN ('Germany', 'France', 'UK');
+
+
+/*BETWEEN operator selects values within a given range. The values can be numbers, text, or dates.*/
+SELECT column_name(s)
+FROM table_name
+WHERE column_name BETWEEN value1 AND value2;
+
+SELECT * FROM Products
+WHERE Price BETWEEN 10 AND 20;
